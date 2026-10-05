@@ -57,8 +57,9 @@ In frames of a suturing training video (JIGSAWS) recorded with the da Vinci Surg
 
 # Needle state
 ## needle_state: whether the needle is in the pad
-- inserted: part of the needle is inside the pad (while being driven or pulled out, left in the pad, or stuck in the pad as its parking
-  place at the start or end)
+- inserted: part of the needle is inside the pad at the suture line (around the incision and its entry and exit marks), while being
+  driven or pulled out, or left in the pad between them
+- parked: the needle is stuck in the pad away from the suture line, as its parking place at the start or end
 - not_inserted: the needle is visible and no part of it is inside the pad (in the air, or lying on the pad)
 - not_visible: no part of the needle is visible (out of view, or completely hidden by a jaw or the pad)
 
@@ -106,7 +107,7 @@ OUTPUT_SCHEMA = {
                     "frame_index": {"type": "integer"},
                     "needle_state": {
                         "type": "string",
-                        "enum": ["inserted", "not_inserted", "not_visible"],
+                        "enum": ["inserted", "parked", "not_inserted", "not_visible"],
                     },
                     "holder": {
                         "type": "string",
