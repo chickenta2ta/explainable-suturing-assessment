@@ -28,6 +28,7 @@ GolfDB (CVPR Workshops 2019).
   outside the tissue.
 - needle_entry puts the needle in the tissue, and needle_withdrawal_end or needle_retraction_end puts it back outside.
 - Repositions are annotated only while the needle is outside the tissue.
+- No events are annotated after the last needle_withdrawal_end, when the needle is carried to the parking place.
 
 When the instant is occluded, the occluded period is treated as in the tissue or held by both instruments, and the
 event is placed as follows.
