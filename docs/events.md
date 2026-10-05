@@ -24,6 +24,8 @@ GolfDB (CVPR Workshops 2019).
 | 5 | needle_retraction_end | The whole needle leaves the tissue after being pulled back to the entry side |
 
 - The needle is either outside the tissue or in the tissue. It is outside the tissue at the start of the video.
+- The parking place where the needle is stuck at the start and end of the video is not tissue; the needle there is
+  outside the tissue.
 - needle_entry puts the needle in the tissue, and needle_withdrawal_end or needle_retraction_end puts it back outside.
 - Repositions are annotated only while the needle is outside the tissue.
 
