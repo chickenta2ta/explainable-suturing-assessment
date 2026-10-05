@@ -1,3 +1,7 @@
 # JIGSAWS Suturing, split by subject
 dev: [B, E, F, I]
 test: [C, D, G, H]
+
+# Roles of development videos
+fewshot_examples: [Suturing_E003]  # few-shot examples only; not used for method development or tuning
+segmentation_eval: [Suturing_I002]  # segmentation IoU; also used for method development and tuning
