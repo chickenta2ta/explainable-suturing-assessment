@@ -23,3 +23,10 @@ Subjects are split 4 / 4 (`configs/split.yaml`). Each set has one expert, one in
 - Test videos: all 19 videos of C, D, G and H, evaluated once with all settings fixed on the development set.
 
 Videos recorded at 320×240 (`Suturing_G001`–`G005`, `Suturing_H001`) are upscaled 2× to 640×480.
+
+## Frame indexing and sampling
+
+- `frame_index` is the 0-based order in which OpenCV (`cv2.VideoCapture.read()`) decodes the capture1 video from the
+  start. It does not match the frame numbers of the JIGSAWS gesture labels or kinematics.
+- Segmentation is run at 10 fps on the frames with `frame_index % 3 == 0`. Frames added later (e.g. at a higher rate
+  around an event) keep their own `frame_index`, so existing results are unchanged.
