@@ -2,6 +2,8 @@
 dev: [B, E, F, I]
 test: [C, D, G, H]
 
-# Roles of development videos
-fewshot_examples: [Suturing_E003]  # few-shot examples only; not used for method development or tuning
-segmentation_eval: [Suturing_I002]  # segmentation IoU; also used for method development and tuning
+# Videos used in the experiments
+fewshot_examples: [Suturing_E003]   # few-shot examples only
+segmentation_eval: [Suturing_I002]  # segmentation IoU; also one of the dev videos
+dev_videos: [Suturing_B002, Suturing_B004, Suturing_E001, Suturing_E002, Suturing_F001, Suturing_F003, Suturing_I001, Suturing_I002]
+test_videos: all  # all 19 test videos
