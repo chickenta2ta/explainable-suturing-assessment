@@ -1,0 +1,9 @@
+{
+ "video": "Suturing_B001",
+ "clips": [
+  {"start": 666, "end": 726, "events": [{"event": "needle_entry", "frame_index": 696}]},
+  {"start": 925, "end": 985, "events": [{"event": "needle_retraction_end", "frame_index": 955}]},
+  {"start": 2303, "end": 2363, "events": [{"event": "needle_withdrawal_end", "frame_index": 2333}]},
+  {"start": 3262, "end": 3339, "events": [{"event": "needle_reposition_start", "frame_index": 3292}, {"event": "needle_reposition_end", "frame_index": 3309}]}
+ ]
+}
