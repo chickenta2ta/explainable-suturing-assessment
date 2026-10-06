@@ -20,7 +20,7 @@ The few-shot examples use development subjects' trials that are not development 
   (`docs/events.md`). This video is not used for anything else.
 - Development videos: two per subject, the lowest- and highest-GRS trials of each subject (ties broken by the lower
   trial number; 8 videos, `configs/split.yaml`). Used for method development and hyperparameter
-  tuning, with hyperparameters selected by leave-one-subject-out cross-validation over B, E, F and I.
+  tuning.
 - Segmentation evaluation: `Suturing_H004`, one of the test videos. Segmentation masks of the instruments, needle and
   thread on frames sampled every 3 s, used to measure the segmentation IoU. The segmentation is fixed before the IoU
   is measured.
