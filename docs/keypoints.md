@@ -20,11 +20,10 @@ Each visible instrument (at most two, in no particular order) is annotated separ
 |---|---|
 | clasper_1, clasper_2 | Tips of the two jaws, in no particular order. When the jaws are closed, both are at almost the same place |
 | head | Joint at the base of the jaws, around which the jaws open and close |
-| shaft | Distal end of the black shaft, where it meets the metal wrist, at the center of the shaft width |
 | grasp | Where the center line of the needle crosses the center line of the jaws (the line along the jaws through the middle of their width). Only when the jaws grip the needle |
 
-The `end` keypoint of Du et al. (proximal end of the shaft) is not used, since `head` and `shaft` give the instrument
-direction.
+The `shaft` and `end` keypoints of Du et al. are not used. The jaws can bend from the shaft at the wrist, and the
+Needle Hold sub-skills of EASE are defined by the jaws, whose direction is given by the jaw tips and `head`.
 
 ## Annotation rules
 
