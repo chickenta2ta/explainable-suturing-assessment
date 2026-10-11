@@ -36,6 +36,6 @@ along them.
 - Keypoints: `grasp`, `head` and the jaw tip of the holding instrument.
 - Depth: the distance from the jaw tip to the projection of `grasp` onto the line through the jaw tip and `head`,
   divided by the distance from the jaw tip to `head` (0 at the jaw tip, 1 at `head`).
-- Frames: the frames in which the jaws look at least 0.8 times their true length (Frames), where the jaws are not
-  strongly foreshortened.
+- Frames: the frames of the stitch in which the jaws look at least 0.8 times their true length (Frames), where
+  the jaws are not strongly foreshortened.
 - Value of a stitch: the median depth of these frames. The stitch is not measured if there is no such frame.
