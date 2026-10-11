@@ -26,6 +26,31 @@
       ]
     },
     {
+      "video": "Suturing_B003",
+      "events": [
+        {"frame_index": 246, "event": "needle_entry"},
+        {"frame_index": 589, "event": "needle_withdrawal_end"},
+        {"frame_index": 895, "event": "needle_reposition_start"},
+        {"frame_index": 921, "event": "needle_reposition_end"},
+        {"frame_index": 990, "event": "needle_entry"},
+        {"frame_index": 1312, "event": "needle_withdrawal_end"},
+        {"frame_index": 1504, "event": "needle_reposition_start"},
+        {"frame_index": 1517, "event": "needle_reposition_end"},
+        {"frame_index": 1638, "event": "needle_entry"},
+        {"frame_index": 2110, "event": "needle_withdrawal_end"},
+        {"frame_index": 2354, "event": "needle_reposition_start"},
+        {"frame_index": 2368, "event": "needle_reposition_end"},
+        {"frame_index": 2464, "event": "needle_entry"},
+        {"frame_index": 3062, "event": "needle_withdrawal_end"}
+      ],
+      "stitches": [
+        {"entry_frame_index": 246, "withdrawal_end_frame_index": 589, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 1, "wrist_rotation": 1}},
+        {"entry_frame_index": 990, "withdrawal_end_frame_index": 1312, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 1638, "withdrawal_end_frame_index": 2110, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 2464, "withdrawal_end_frame_index": 3062, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
+      ]
+    },
+    {
       "video": "Suturing_B004",
       "events": [
         {"frame_index": 135, "event": "needle_entry"},
@@ -50,6 +75,31 @@
         {"entry_frame_index": 1174, "withdrawal_end_frame_index": 1484, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1840, "withdrawal_end_frame_index": 2254, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 2661, "withdrawal_end_frame_index": 2994, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
+      ]
+    },
+    {
+      "video": "Suturing_B005",
+      "events": [
+        {"frame_index": 518, "event": "needle_entry"},
+        {"frame_index": 1031, "event": "needle_withdrawal_end"},
+        {"frame_index": 1185, "event": "needle_reposition_start"},
+        {"frame_index": 1203, "event": "needle_reposition_end"},
+        {"frame_index": 1303, "event": "needle_entry"},
+        {"frame_index": 1551, "event": "needle_withdrawal_end"},
+        {"frame_index": 1767, "event": "needle_reposition_start"},
+        {"frame_index": 1784, "event": "needle_reposition_end"},
+        {"frame_index": 1855, "event": "needle_entry"},
+        {"frame_index": 2172, "event": "needle_withdrawal_end"},
+        {"frame_index": 2313, "event": "needle_reposition_start"},
+        {"frame_index": 2330, "event": "needle_reposition_end"},
+        {"frame_index": 2388, "event": "needle_entry"},
+        {"frame_index": 2634, "event": "needle_withdrawal_end"}
+      ],
+      "stitches": [
+        {"entry_frame_index": 518, "withdrawal_end_frame_index": 1031, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 1303, "withdrawal_end_frame_index": 1551, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 1855, "withdrawal_end_frame_index": 2172, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 2388, "withdrawal_end_frame_index": 2634, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
       ]
     },
     {
@@ -406,6 +456,56 @@
         {"entry_frame_index": 1091, "withdrawal_end_frame_index": 1317, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1612, "withdrawal_end_frame_index": 1826, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 2117, "withdrawal_end_frame_index": 2408, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}}
+      ]
+    },
+    {
+      "video": "Suturing_E004",
+      "events": [
+        {"frame_index": 278, "event": "needle_entry"},
+        {"frame_index": 601, "event": "needle_withdrawal_end"},
+        {"frame_index": 790, "event": "needle_reposition_start"},
+        {"frame_index": 805, "event": "needle_reposition_end"},
+        {"frame_index": 931, "event": "needle_entry"},
+        {"frame_index": 1175, "event": "needle_withdrawal_end"},
+        {"frame_index": 1359, "event": "needle_reposition_start"},
+        {"frame_index": 1437, "event": "needle_reposition_end"},
+        {"frame_index": 1520, "event": "needle_entry"},
+        {"frame_index": 1745, "event": "needle_withdrawal_end"},
+        {"frame_index": 2119, "event": "needle_reposition_start"},
+        {"frame_index": 2142, "event": "needle_reposition_end"},
+        {"frame_index": 2238, "event": "needle_entry"},
+        {"frame_index": 2486, "event": "needle_withdrawal_end"}
+      ],
+      "stitches": [
+        {"entry_frame_index": 278, "withdrawal_end_frame_index": 601, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 931, "withdrawal_end_frame_index": 1175, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
+        {"entry_frame_index": 1520, "withdrawal_end_frame_index": 1745, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 2238, "withdrawal_end_frame_index": 2486, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}}
+      ]
+    },
+    {
+      "video": "Suturing_E005",
+      "events": [
+        {"frame_index": 157, "event": "needle_entry"},
+        {"frame_index": 426, "event": "needle_withdrawal_end"},
+        {"frame_index": 639, "event": "needle_reposition_start"},
+        {"frame_index": 646, "event": "needle_reposition_end"},
+        {"frame_index": 730, "event": "needle_entry"},
+        {"frame_index": 941, "event": "needle_withdrawal_end"},
+        {"frame_index": 1163, "event": "needle_reposition_start"},
+        {"frame_index": 1172, "event": "needle_reposition_end"},
+        {"frame_index": 1231, "event": "needle_entry"},
+        {"frame_index": 1478, "event": "needle_withdrawal_end"},
+        {"frame_index": 1629, "event": "needle_reposition_start"},
+        {"frame_index": 1641, "event": "needle_reposition_end"},
+        {"frame_index": 1714, "event": "needle_entry"},
+        {"frame_index": 1922, "event": "needle_withdrawal_end"}
+      ],
+      "stitches": [
+        {"entry_frame_index": 157, "withdrawal_end_frame_index": 426, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 730, "withdrawal_end_frame_index": 941, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1231, "withdrawal_end_frame_index": 1478, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 1714, "withdrawal_end_frame_index": 1922, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}}
       ]
     },
     {
