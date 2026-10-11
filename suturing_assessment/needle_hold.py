@@ -6,6 +6,21 @@ import numpy as np
 
 # Percentile of the length in the image taken as the true length (docs/needle_hold.md)
 TRUE_LENGTH_PERCENTILE = 95
+# Depth of Needle Hold uses frames in which the jaws look at least this fraction of their true length
+DEPTH_MIN_JAW = 0.8
+
+SUB_SKILLS = {
+    "needle_hold_angle": (
+        lambda f, w: needle_hold_angle(f, w),
+        lambda v: angle_score(v),
+        1,
+    ),
+    "depth_of_needle_hold": (
+        lambda f, w: depth_of_needle_hold(f, w),
+        lambda v: depth_score(v),
+        3,
+    ),
+}
 
 
 def stitches(events):
@@ -50,6 +65,16 @@ def angle(a, b):
     return float(np.degrees(np.arccos(np.clip(cos, -1, 1))))
 
 
+def jaw_length(frames):
+    """True length of the jaws: the percentile of the jaw length in the image over all frames of the video"""
+    lengths = []
+    for frame in frames.values():
+        holder = holding_instrument(frame)
+        if holder is not None:
+            lengths.append(np.linalg.norm(holder[1] - holder[2]))
+    return np.percentile(lengths, TRUE_LENGTH_PERCENTILE) if lengths else None
+
+
 def needle_hold_angle(frames, windows):
     """Needle Hold Angle of each stitch: (median angle or None, number of frames)"""
     rows = []
@@ -65,10 +90,7 @@ def needle_hold_angle(frames, windows):
             needle = np.array(frame["needle"]["needle_tip"], float) - grasp
             stitch_rows.append((needle, head - jaw_tip))
         rows.append(stitch_rows)
-    jaws = [np.linalg.norm(jaw) for stitch_rows in rows for _, jaw in stitch_rows]
-    if not jaws:
-        return [(None, 0) for _ in windows]
-    jaw_length = np.percentile(jaws, TRUE_LENGTH_PERCENTILE)
+    jaw_true = jaw_length(frames)
     out = []
     for stitch_rows in rows:
         if not stitch_rows:
@@ -82,10 +104,41 @@ def needle_hold_angle(frames, windows):
         for needle, jaw in stitch_rows:
             # The needle tip is farther from the camera than grasp; head is nearer than the jaw tip
             needle_depth = np.sqrt(max(needle_length**2 - needle @ needle, 0))
-            jaw_depth = -np.sqrt(max(jaw_length**2 - jaw @ jaw, 0))
+            jaw_depth = -np.sqrt(max(jaw_true**2 - jaw @ jaw, 0))
             angles.append(angle(np.r_[needle, needle_depth], np.r_[jaw, jaw_depth]))
         out.append((float(np.median(angles)), len(stitch_rows)))
     return out
+
+
+def depth_of_needle_hold(frames, windows):
+    """Depth of Needle Hold of each stitch: (median depth or None, number of frames)"""
+    jaw_true = jaw_length(frames)
+    out = []
+    for start, entry, _ in windows:
+        depths = []
+        for index, frame in frames.items():
+            if not start <= index <= entry:
+                continue
+            holder = holding_instrument(frame)
+            if holder is None:
+                continue
+            grasp, head, jaw_tip = holder
+            jaw = head - jaw_tip
+            # Frames in which the jaws are not strongly foreshortened
+            if np.linalg.norm(jaw) < DEPTH_MIN_JAW * jaw_true:
+                continue
+            depths.append(float((grasp - jaw_tip) @ jaw / (jaw @ jaw)))
+        out.append((float(np.median(depths)), len(depths)) if depths else (None, 0))
+    return out
+
+
+def depth_score(value):
+    """EASE score of a Depth of Needle Hold: 3 (distal 1/4 of the jaws), 2 (1/4-1/2) or 1"""
+    if value is None:
+        return None
+    if value <= 0.25:
+        return 3
+    return 2 if value <= 0.5 else 1
 
 
 def angle_score(value):
@@ -97,36 +150,8 @@ def angle_score(value):
     return 2 if 135 < value <= 150 else 1
 
 
-def main():
-    """Needle Hold Angle of the stitches of the given videos, from keypoints and annotated events"""
-    if len(sys.argv) < 5:
-        print("Usage: needle_hold.py KEYPOINT_DIR ANNOTATIONS OUTPUT VIDEO [VIDEO ...]")
-        sys.exit(1)
-    keypoint_dir, annotations, output = map(Path, sys.argv[1:4])
-    events = {
-        v["video"]: v["events"] for v in json.loads(annotations.read_text())["videos"]
-    }
-    videos = []
-    for video in sys.argv[4:]:
-        result = json.loads((keypoint_dir / video / f"{video}.json").read_text())
-        frames = {int(index): frame for index, frame in result["frames"].items()}
-        windows = stitches(events[video])
-        values = needle_hold_angle(frames, windows)
-        videos.append(
-            {
-                "video": video,
-                "stitches": [
-                    {
-                        "entry_frame_index": entry,
-                        "withdrawal_end_frame_index": end,
-                        "frames": count,
-                        "needle_hold_angle": None if value is None else round(value, 1),
-                        "score": angle_score(value),
-                    }
-                    for (_, entry, end), (value, count) in zip(windows, values)
-                ],
-            }
-        )
+def write_results(path, videos, name):
+    """Write the values of a sub-skill, one stitch per line"""
     lines = ["{", '  "videos": [']
     for i, video in enumerate(videos):
         lines.append("    {")
@@ -139,9 +164,46 @@ def main():
         lines.append("      ]")
         lines.append("    }" + ("," if i < len(videos) - 1 else ""))
     lines += ["  ]", "}"]
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text("\n".join(lines) + "\n")
-    print(f"{output}: {sum(len(v['stitches']) for v in videos)} stitches")
+    path.write_text("\n".join(lines) + "\n")
+    print(f"{path}: {sum(len(v['stitches']) for v in videos)} stitches")
+
+
+def main():
+    """Needle Hold Angle and Depth of Needle Hold of the stitches of the given videos, from keypoints and annotated events"""
+    if len(sys.argv) < 5:
+        print(
+            "Usage: needle_hold.py KEYPOINT_DIR ANNOTATIONS OUTPUT_DIR VIDEO [VIDEO ...]"
+        )
+        sys.exit(1)
+    keypoint_dir, annotations, output_dir = map(Path, sys.argv[1:4])
+    events = {
+        v["video"]: v["events"] for v in json.loads(annotations.read_text())["videos"]
+    }
+    results = {name: [] for name in SUB_SKILLS}
+    for video in sys.argv[4:]:
+        result = json.loads((keypoint_dir / video / f"{video}.json").read_text())
+        frames = {int(index): frame for index, frame in result["frames"].items()}
+        windows = stitches(events[video])
+        for name, (measure, score, digits) in SUB_SKILLS.items():
+            values = measure(frames, windows)
+            results[name].append(
+                {
+                    "video": video,
+                    "stitches": [
+                        {
+                            "entry_frame_index": entry,
+                            "withdrawal_end_frame_index": end,
+                            "frames": count,
+                            name: None if value is None else round(value, digits),
+                            "score": score(value),
+                        }
+                        for (_, entry, end), (value, count) in zip(windows, values)
+                    ],
+                }
+            )
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for name, videos in results.items():
+        write_results(output_dir / f"{name}.json", videos, name)
 
 
 if __name__ == "__main__":
