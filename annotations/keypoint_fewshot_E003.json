@@ -1,0 +1,13 @@
+{
+  "video": "Suturing_E003",
+  "image_size": [640, 480],
+  "frames": [
+    {"frame_index": 0, "needle": {"needle_tail": [478, 437]}, "instruments": [{"clasper_1": [480, 361], "clasper_2": [507, 344], "head": [506, 361]}, {"clasper_1": [242, 193], "clasper_2": [261, 213], "head": [233, 205]}]},
+    {"frame_index": 300, "needle": {"needle_tail": [369, 306]}, "instruments": [{"clasper_1": [394, 317], "clasper_2": [403, 313], "head": [404, 344], "grasp": [399, 318]}, {"clasper_1": [256, 228], "clasper_2": [280, 240], "head": [232, 239]}]},
+    {"frame_index": 420, "needle": {"needle_tip": [298, 310], "needle_tail": [412, 302]}, "instruments": [{"clasper_1": [387, 331], "clasper_2": [390, 331], "head": [405, 351], "grasp": [391, 335]}, {"clasper_1": [298, 328], "clasper_2": [325, 334], "head": [281, 338]}]},
+    {"frame_index": 480, "needle": {}, "instruments": [{"clasper_1": [465, 314], "clasper_2": [488, 307], "head": [502, 334]}, {"clasper_1": [305, 307], "clasper_2": [316, 314], "head": [294, 323], "grasp": [297, 321]}]},
+    {"frame_index": 900, "needle": {"needle_tip": [302, 272], "needle_tail": [412, 246]}, "instruments": [{"clasper_1": [385, 270], "clasper_2": [387, 270], "head": [397, 291], "grasp": [390, 279]}, {"clasper_1": [268, 284], "clasper_2": [284, 292], "head": [263, 307]}]},
+    {"frame_index": 1440, "needle": {"needle_tip": [313, 230], "needle_tail": [409, 197]}, "instruments": [{"clasper_1": [393, 221], "clasper_2": [402, 225], "head": [402, 245], "grasp": [397, 229]}, {"clasper_1": [243, 223], "clasper_2": [281, 226], "head": [238, 243]}]},
+    {"frame_index": 2400, "needle": {"needle_tail": [280, 132]}, "instruments": [{"clasper_1": [292, 164], "clasper_2": [293, 162], "head": [327, 172]}, {"clasper_1": [265, 192], "clasper_2": [271, 199], "head": [236, 207], "grasp": [258, 201]}]}
+  ]
+}
