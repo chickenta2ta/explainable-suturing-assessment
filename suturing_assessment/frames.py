@@ -1,8 +1,5 @@
 import cv2
 
-# Segmentation runs at 10 fps on frame_index % 3 == 0
-FRAME_STEP = 3
-
 # 320x240 videos are upscaled to the size of the others so that all coordinates share one scale
 FRAME_SIZE = (640, 480)
 

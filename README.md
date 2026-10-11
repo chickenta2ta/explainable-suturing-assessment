@@ -4,3 +4,4 @@ Automated, explainable scoring of suturing sub-skills based on EASE (End-to-End 
 
 - [Dataset](docs/dataset.md)
 - [Events](docs/events.md)
+- [Keypoints](docs/keypoints.md)

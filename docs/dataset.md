@@ -14,16 +14,15 @@ Subjects are split 4 / 4 (`configs/split.yaml`). Each set has one expert, one in
 
 The few-shot examples use development subjects' trials that are not development videos, one trial for each role.
 
-- Segmentation few-shot examples: `Suturing_E003`. Segmentation masks of the instruments, needle and thread on 20
-  frames. This video is not used for anything else.
+- Keypoint few-shot examples: `Suturing_E003`. Keypoints (`docs/keypoints.md`) on 20 frames. This video is not used
+  for anything else.
 - Event detection few-shot examples: `Suturing_B001`. Short clips around annotated events, covering all event types
   (`docs/events.md`). This video is not used for anything else.
 - Development videos: two per subject, the lowest- and highest-GRS trials of each subject (ties broken by the lower
   trial number; 8 videos, `configs/split.yaml`). Used for method development and hyperparameter
   tuning.
-- Segmentation evaluation: `Suturing_H004`, one of the test videos. Segmentation masks of the instruments, needle and
-  thread on frames sampled every 3 s, used to measure the segmentation IoU. The segmentation is fixed before the IoU
-  is measured.
+- Keypoint evaluation: `Suturing_H004`, one of the test videos. Keypoints on frames sampled every 3 s, used to measure
+  the keypoint accuracy.
 - Test videos: all 19 videos of C, D, G and H, evaluated once with all settings fixed on the development set.
 
 Videos recorded at 320×240 (`Suturing_G001`–`G005`, `Suturing_H001`) are upscaled 2× to 640×480.
@@ -32,6 +31,5 @@ Videos recorded at 320×240 (`Suturing_G001`–`G005`, `Suturing_H001`) are upsc
 
 - `frame_index` is the 0-based order in which OpenCV (`cv2.VideoCapture.read()`) decodes the capture1 video from the
   start. It does not match the frame numbers of the JIGSAWS gesture labels or kinematics.
-- Segmentation is run at 10 fps on the frames with `frame_index % 3 == 0`, and event detection at 5 fps on the frames
-  with `frame_index % 6 == 0`. Frames added later (e.g. at a higher rate around an event) keep their own
-  `frame_index`, so existing results are unchanged.
+- Event detection is run at 5 fps on the frames with `frame_index % 6 == 0`. Frames added later (e.g. at a higher
+  rate around an event) keep their own `frame_index`, so existing results are unchanged.

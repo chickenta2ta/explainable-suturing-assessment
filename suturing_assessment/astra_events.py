@@ -4,7 +4,7 @@ from pathlib import Path
 
 import cv2
 import requests
-from astra_segmentation import (
+from astra import (
     API_URL,
     MODEL,
     REASONING_EFFORT,
@@ -14,7 +14,7 @@ from astra_segmentation import (
 )
 from frames import count_frames, read_frames, video_path
 
-# Event detection runs at 5 fps on frame_index % 6 == 0, a subset of the segmentation frames
+# Event detection runs at 5 fps on frame_index % 6 == 0
 EVENT_STEP = 6
 FPS = 30
 
