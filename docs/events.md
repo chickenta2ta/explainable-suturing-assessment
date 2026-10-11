@@ -63,3 +63,30 @@ reposition_start → reposition_end → entry → retraction_end
   the video).
 - The Needle Hold sub-skills are fixed once the needle is repositioned, so they can be measured at any frame in the
   window.
+
+## Annotation file
+
+`annotations/events_and_ease.json` holds the events and the EASE scores of the development and test videos.
+
+```json
+{
+  "videos": [
+    {
+      "video": "Suturing_B002",
+      "events": [
+        {"frame_index": 625, "event": "needle_entry"}
+      ],
+      "stitches": [
+        {"entry_frame_index": 625, "withdrawal_end_frame_index": 951,
+         "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1,
+                         "depth_of_needle_hold": 3, "wrist_rotation": 1}}
+      ]
+    }
+  ]
+}
+```
+
+- `frame_index` follows `docs/dataset.md`. Events and stitches are in time order.
+- A stitch is identified by the frame indices of its entry and needle_withdrawal_end.
+- EASE scores are 1 (fail), 2 (adequate) or 3 (ideal). Wrist Rotation is scored once from the entry to
+  needle_withdrawal_end.
