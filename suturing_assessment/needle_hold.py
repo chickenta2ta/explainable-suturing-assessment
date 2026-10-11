@@ -65,10 +65,12 @@ def angle(a, b):
     return float(np.degrees(np.arccos(np.clip(cos, -1, 1))))
 
 
-def jaw_length(frames):
-    """True length of the jaws: the percentile of the jaw length in the image over all frames of the video"""
+def jaw_length(frames, windows):
+    """True length of the jaws: the percentile of the jaw length in the image over the windows of all stitches"""
     lengths = []
-    for frame in frames.values():
+    for index, frame in frames.items():
+        if not any(start <= index <= entry for start, entry, _ in windows):
+            continue
         holder = holding_instrument(frame)
         if holder is not None:
             lengths.append(np.linalg.norm(holder[1] - holder[2]))
@@ -90,7 +92,7 @@ def needle_hold_angle(frames, windows):
             needle = np.array(frame["needle"]["needle_tip"], float) - grasp
             stitch_rows.append((needle, head - jaw_tip))
         rows.append(stitch_rows)
-    jaw_true = jaw_length(frames)
+    jaw_true = jaw_length(frames, windows)
     out = []
     for stitch_rows in rows:
         if not stitch_rows:
@@ -112,7 +114,7 @@ def needle_hold_angle(frames, windows):
 
 def depth_of_needle_hold(frames, windows):
     """Depth of Needle Hold of each stitch: (median depth or None, number of frames)"""
-    jaw_true = jaw_length(frames)
+    jaw_true = jaw_length(frames, windows)
     out = []
     for start, entry, _ in windows:
         depths = []
