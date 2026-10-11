@@ -7,26 +7,25 @@ import requests
 from astra import API_URL, MODEL, REASONING_EFFORT, headers, image_url, submit
 from frames import FRAME_SIZE, count_frames, original_size, read_frames, video_path
 
-# Keypoint detection runs on frame_index % KEYPOINT_STEP == 0
-KEYPOINT_STEP = 3
+# Keypoint detection and needle segmentation run on frame_index % FRAME_STEP == 0
+FRAME_STEP = 3
 FPS = 30
 
 WINDOW = 20
 # Frames shared by consecutive windows; the answer nearer the window center is kept
 OVERLAP = 2
 
-EXAMPLES_PATH = (
-    Path(__file__).resolve().parent.parent
-    / "annotations"
-    / "keypoint_fewshot_E003.json"
-)
+ANNOTATIONS = Path(__file__).resolve().parent.parent / "annotations"
+KEYPOINT_EXAMPLES_PATH = ANNOTATIONS / "keypoint_fewshot_E003.json"
+NEEDLE_MASK_EXAMPLES_PATH = ANNOTATIONS / "needle_mask_fewshot_E003.json"
 
 NEEDLE_KEYPOINTS = ["needle_tip", "needle_tail"]
 INSTRUMENT_KEYPOINTS = ["clasper_1", "clasper_2", "head", "grasp"]
 
 PROMPT = """# Task
 In frames of a suturing training video (JIGSAWS) recorded with the da Vinci Surgical System on a bench-top model
-(640x480 pixels), output the keypoints of the needle and the instruments as integer pixel coordinates [x, y].
+(640x480 pixels), output the keypoints of the needle and the instruments as integer pixel coordinates [x, y], and the
+outline of the needle as polygons (lists of integer pixel coordinates [x, y]).
 
 # Objects
 ## Instruments
@@ -64,11 +63,19 @@ In frames of a suturing training video (JIGSAWS) recorded with the da Vinci Surg
 - The only exception is grasp, which is given whenever the instrument is seen gripping the needle.
 - When only one jaw tip is visible, give it as clasper_1.
 
+# Needle mask
+- needle_polygons: one polygon per visible part of the needle. Do not include hidden parts or the thread.
+  - When held in a jaw, the needle can appear as two parts, one on each side of the jaw.
+  - When inserted in the pad, the tip side and the tail side can appear as two parts.
+- Find needle_tip and needle_tail first. The needle runs between them, so the polygons end at the visible needle_tip
+  and needle_tail.
+- Empty when no part of the needle is visible.
+
 # Output
-For every given frame, the needle keypoints and the keypoints of each visible instrument.
+For every given frame, the needle keypoints, the needle polygons and the keypoints of each visible instrument.
 
 # Examples
-Frames from another video, each with its keypoints. Keypoints that are not given are null."""
+Frames from another video, each with its keypoints and needle polygons. Keypoints that are not given are null."""
 
 WINDOW_PROMPT = (
     "The following are {count} consecutive frames of one video, {interval:.1f} s apart, in time order, each "
@@ -84,6 +91,15 @@ POINT_SCHEMA = {
         {"type": "null"},
     ]
 }
+POLYGON_SCHEMA = {
+    "type": "array",
+    "items": {
+        "type": "array",
+        "items": {"type": "integer"},
+        "minItems": 2,
+        "maxItems": 2,
+    },
+}
 OUTPUT_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
@@ -94,7 +110,7 @@ OUTPUT_SCHEMA = {
             "items": {
                 "type": "object",
                 "additionalProperties": False,
-                "required": ["frame_index", "needle", "instruments"],
+                "required": ["frame_index", "needle", "needle_polygons", "instruments"],
                 "properties": {
                     "frame_index": {"type": "integer"},
                     "needle": {
@@ -103,6 +119,7 @@ OUTPUT_SCHEMA = {
                         "required": NEEDLE_KEYPOINTS,
                         "properties": {k: POINT_SCHEMA for k in NEEDLE_KEYPOINTS},
                     },
+                    "needle_polygons": {"type": "array", "items": POLYGON_SCHEMA},
                     "instruments": {
                         "type": "array",
                         "items": {
@@ -123,7 +140,7 @@ OUTPUT_SCHEMA = {
 
 def windows(num_frames):
     """Split the sampled frames into windows starting at frame 0; the last one may be shorter"""
-    sampled = list(range(0, num_frames, KEYPOINT_STEP))
+    sampled = list(range(0, num_frames, FRAME_STEP))
     starts = range(0, max(len(sampled) - OVERLAP, 1), WINDOW - OVERLAP)
     return [sampled[start : start + WINDOW] for start in starts]
 
@@ -151,10 +168,11 @@ def upload_example_images(video_dir, examples, file_ids_path):
     return file_ids
 
 
-def example_label(frame):
-    """Keypoints of an example frame in the output format, with missing keypoints as null"""
+def example_label(frame, polygons):
+    """Keypoints and needle polygons of an example frame in the output format, with missing keypoints as null"""
     return {
         "needle": {k: frame["needle"].get(k) for k in NEEDLE_KEYPOINTS},
+        "needle_polygons": polygons,
         "instruments": [
             {k: instrument.get(k) for k in INSTRUMENT_KEYPOINTS}
             for instrument in frame["instruments"]
@@ -164,19 +182,17 @@ def example_label(frame):
 
 def examples_content(video_dir, output_dir):
     """Prompt and few-shot examples, ending with a cache breakpoint"""
-    examples = json.loads(EXAMPLES_PATH.read_text())
+    examples = json.loads(KEYPOINT_EXAMPLES_PATH.read_text())
+    masks = json.loads(NEEDLE_MASK_EXAMPLES_PATH.read_text())
+    polygons = {frame["frame_index"]: frame["needle"] for frame in masks["frames"]}
     file_ids = upload_example_images(
-        video_dir, examples, output_dir / "keypoint_example_files.json"
+        video_dir, examples, output_dir / "keypoints_and_masks_example_files.json"
     )
     content = [{"type": "input_text", "text": PROMPT}]
     for frame in examples["frames"]:
         name = f"{examples['video']}_{frame['frame_index']}"
-        content.append(
-            {
-                "type": "input_text",
-                "text": f"{name}: {json.dumps(example_label(frame))}",
-            }
-        )
+        label = example_label(frame, polygons[frame["frame_index"]])
+        content.append({"type": "input_text", "text": f"{name}: {json.dumps(label)}"})
         content.append(
             {"type": "input_image", "file_id": file_ids[name], "detail": "high"}
         )
@@ -196,7 +212,7 @@ def request_body(examples, frame_indices, images):
         {
             "type": "input_text",
             "text": WINDOW_PROMPT.format(
-                count=len(frame_indices), interval=KEYPOINT_STEP / FPS
+                count=len(frame_indices), interval=FRAME_STEP / FPS
             ),
         }
     ]
@@ -216,7 +232,7 @@ def request_body(examples, frame_indices, images):
         "text": {
             "format": {
                 "type": "json_schema",
-                "name": "keypoints",
+                "name": "keypoints_and_needle_polygons",
                 "strict": True,
                 "schema": OUTPUT_SCHEMA,
             }
@@ -266,7 +282,7 @@ def parse_answers(line, window):
 
 
 def fetch(video, output_dir):
-    """Merge the window answers into per-frame keypoints in the original resolution"""
+    """Merge the window answers into per-frame keypoints and needle polygons in the original resolution"""
     batch_ids = json.loads((output_dir / f"{video}.batches.json").read_text())
     lines = []
     for batch_id in batch_ids:
@@ -284,15 +300,11 @@ def fetch(video, output_dir):
     scale_y = meta["original_size"][1] / FRAME_SIZE[1]
     windows_by_id = {f"{video}:{w[0]}": w for w in meta["windows"]}
 
-    def to_original(points, keys):
-        return {
-            k: (
-                None
-                if points[k] is None
-                else [round(points[k][0] * scale_x), round(points[k][1] * scale_y)]
-            )
-            for k in keys
-        }
+    def to_original(point):
+        return [round(point[0] * scale_x), round(point[1] * scale_y)]
+
+    def keypoints(points, keys):
+        return {k: None if points[k] is None else to_original(points[k]) for k in keys}
 
     results = {}
     answered = set()
@@ -311,9 +323,13 @@ def fetch(video, output_dir):
             results[index] = (
                 distance,
                 {
-                    "needle": to_original(answer["needle"], NEEDLE_KEYPOINTS),
+                    "needle": keypoints(answer["needle"], NEEDLE_KEYPOINTS),
+                    "needle_polygons": [
+                        [to_original(point) for point in polygon]
+                        for polygon in answer["needle_polygons"]
+                    ],
                     "instruments": [
-                        to_original(instrument, INSTRUMENT_KEYPOINTS)
+                        keypoints(instrument, INSTRUMENT_KEYPOINTS)
                         for instrument in answer["instruments"]
                     ],
                 },
@@ -330,11 +346,11 @@ def fetch(video, output_dir):
 
 
 def main():
-    """Build, submit or fetch the Astra keypoint detection batches of a video"""
+    """Build, submit or fetch the Astra keypoint detection and needle segmentation batches of a video"""
     if len(sys.argv) < 4 or sys.argv[1] not in ("build", "submit", "fetch"):
         print(
-            "Usage: astra_keypoints.py build VIDEO_DIR VIDEO OUTPUT_DIR\n"
-            "       astra_keypoints.py {submit,fetch} VIDEO OUTPUT_DIR"
+            "Usage: astra_keypoints_and_masks.py build VIDEO_DIR VIDEO OUTPUT_DIR\n"
+            "       astra_keypoints_and_masks.py {submit,fetch} VIDEO OUTPUT_DIR"
         )
         sys.exit(1)
     command = sys.argv[1]
