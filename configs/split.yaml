@@ -6,5 +6,7 @@ test: [C, D, G, H]
 keypoint_fewshot: [Suturing_E003]      # few-shot examples for keypoint detection only
 event_fewshot: [Suturing_B001]         # few-shot examples for event detection only
 keypoint_eval: [Suturing_H004]         # keypoint accuracy; also one of the test videos
-dev_videos: [Suturing_B002, Suturing_B004, Suturing_E001, Suturing_E002, Suturing_F001, Suturing_F003, Suturing_I001, Suturing_I002]
+dev_videos: [Suturing_B002, Suturing_B003, Suturing_B004, Suturing_B005, Suturing_E001, Suturing_E002, Suturing_E004,
+             Suturing_E005, Suturing_F001, Suturing_F003, Suturing_F004, Suturing_F005, Suturing_I001, Suturing_I002,
+             Suturing_I003, Suturing_I004]
 test_videos: all  # all 19 test videos

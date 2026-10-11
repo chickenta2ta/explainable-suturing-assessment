@@ -18,9 +18,9 @@ The few-shot examples use development subjects' trials that are not development 
   for anything else.
 - Event detection few-shot examples: `Suturing_B001`. Short clips around annotated events, covering all event types
   (`docs/events.md`). This video is not used for anything else.
-- Development videos: two per subject, the lowest- and highest-GRS trials of each subject (ties broken by the lower
-  trial number; 8 videos, `configs/split.yaml`). Used for method development and hyperparameter
-  tuning.
+- Development videos: four per subject, the two lowest- and two highest-GRS trials of each subject among the trials
+  not used as few-shot examples (ties broken by the lower trial number; 16 videos, `configs/split.yaml`). Used for
+  method development and hyperparameter tuning.
 - Keypoint evaluation: `Suturing_H004`, one of the test videos. Keypoints on frames sampled every 3 s, used to measure
   the keypoint accuracy.
 - Test videos: all 19 videos of C, D, G and H, evaluated once with all settings fixed on the development set.
