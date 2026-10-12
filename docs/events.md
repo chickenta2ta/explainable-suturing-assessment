@@ -90,3 +90,26 @@ reposition_start → reposition_end → entry → retraction_end
 - A stitch is identified by the frame indices of its entry and needle_withdrawal_end.
 - EASE scores are 1 (fail), 2 (adequate) or 3 (ideal). Wrist Rotation is scored once from the entry to
   needle_withdrawal_end.
+
+## Detected events
+
+`results/{dev,test}/astra_events/{video}.json` hold the events detected by Astra (`suturing_assessment/astra_events.py`).
+
+```json
+{
+  "video": "Suturing_B002",
+  "model": "gpt-6-astra",
+  "windows": [[0, 0, 600, 900], [300, 600, 1200, 1500]],
+  "done": 6,
+  "failed_windows": [],
+  "events": [
+    {"event": "needle_entry", "frame_index": 624}
+  ]
+}
+```
+
+- `windows`: [context start, target start, target end, context end] of each window. The events of the target frames
+  are detected from the frames from the context start to the context end, and the targets do not overlap.
+- `done`: the number of windows processed so far. The windows are processed in order, and each request includes the
+  events detected in the earlier windows.
+- `failed_windows`: the target starts of the windows whose answer was not valid. These windows are submitted again.

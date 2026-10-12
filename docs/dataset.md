@@ -31,5 +31,7 @@ Videos recorded at 320×240 (`Suturing_G001`–`G005`, `Suturing_H001`) are upsc
 
 - `frame_index` is the 0-based order in which OpenCV (`cv2.VideoCapture.read()`) decodes the capture1 video from the
   start. It does not match the frame numbers of the JIGSAWS gesture labels or kinematics.
-- Event detection is run at 5 fps on the frames with `frame_index % 6 == 0`. Frames added later (e.g. at a higher
-  rate around an event) keep their own `frame_index`, so existing results are unchanged.
+- Event detection is run at 5 fps on the frames with `frame_index % 6 == 0`.
+- Keypoint detection and needle segmentation are run at 10 fps on the frames with `frame_index % 3 == 0`.
+- Frames added later (e.g. at a higher rate around an event) keep their own `frame_index`, so existing results are
+  unchanged.

@@ -34,3 +34,25 @@ Needle Hold sub-skills of EASE are defined by the jaws, whose direction is given
 - `grasp` is annotated for every instrument that grips the needle, so both instruments have one during a reposition.
   Touching or being near the needle is not gripping.
 - When only one jaw tip is visible, it is annotated as `clasper_1`.
+
+## Detected keypoints and needle masks
+
+`results/{dev,test}/astra_keypoints_and_masks/{video}.json` hold the keypoints and the needle polygons detected by
+Astra (`suturing_assessment/astra_keypoints_and_masks.py`), in the coordinates of the original video.
+
+```json
+{
+  "video": "Suturing_C001",
+  "model": "gpt-6-astra",
+  "failed_windows": [],
+  "frames": {
+    "0": {"needle": {"needle_tip": null, "needle_tail": [433, 429]},
+          "needle_polygons": [[[459, 366], [462, 365], [452, 391], [443, 414]]],
+          "instruments": [{"clasper_1": [230, 205], "clasper_2": [230, 211], "head": [194, 215], "grasp": null}]}
+  }
+}
+```
+
+- `frames`: keyed by `frame_index` (`docs/dataset.md`). Hidden keypoints are null.
+- `needle_polygons`: one polygon per visible part of the needle.
+- `failed_windows`: the first frame indices of the windows without a valid answer.

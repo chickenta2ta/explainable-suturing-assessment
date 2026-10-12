@@ -39,3 +39,23 @@ along them.
 - Frames: the frames of the stitch in which the jaws look at least 0.8 times their true length (Frames), where
   the jaws are not strongly foreshortened.
 - Value of a stitch: the median depth of these frames. The stitch is not measured if there is no such frame.
+
+## Results
+
+`results/dev/needle_hold_angle.json` and `results/dev/depth_of_needle_hold.json` hold the value and the EASE score of
+each stitch (`suturing_assessment/needle_hold.py`, with the annotated events).
+
+```json
+{
+  "videos": [
+    {
+      "video": "Suturing_B002",
+      "stitches": [
+        {"entry_frame_index": 625, "withdrawal_end_frame_index": 951, "frames": 116, "needle_hold_angle": 147.8, "score": 2}
+      ]
+    }
+  ]
+}
+```
+
+- `frames`: the number of frames used. The value and the score are null when the stitch is not measured.
