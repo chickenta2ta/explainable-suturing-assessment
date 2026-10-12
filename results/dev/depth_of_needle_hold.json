@@ -3,73 +3,145 @@
     {
       "video": "Suturing_B002",
       "stitches": [
-        {"entry_frame_index": 625, "withdrawal_end_frame_index": 951, "frames": 44, "depth_of_needle_hold": 0.04, "score": 3},
-        {"entry_frame_index": 1438, "withdrawal_end_frame_index": 1800, "frames": 11, "depth_of_needle_hold": 0.012, "score": 3},
-        {"entry_frame_index": 2125, "withdrawal_end_frame_index": 2698, "frames": 2, "depth_of_needle_hold": 0.177, "score": 3},
-        {"entry_frame_index": 2984, "withdrawal_end_frame_index": 3221, "frames": 0, "depth_of_needle_hold": null, "score": null}
+        {"entry_frame_index": 625, "withdrawal_end_frame_index": 951, "frames": 158, "depth_of_needle_hold": -0.014, "score": 3},
+        {"entry_frame_index": 1438, "withdrawal_end_frame_index": 1800, "frames": 58, "depth_of_needle_hold": 0.017, "score": 3},
+        {"entry_frame_index": 2125, "withdrawal_end_frame_index": 2698, "frames": 32, "depth_of_needle_hold": 0.17, "score": 3},
+        {"entry_frame_index": 2984, "withdrawal_end_frame_index": 3221, "frames": 35, "depth_of_needle_hold": 0.251, "score": 2}
+      ]
+    },
+    {
+      "video": "Suturing_B003",
+      "stitches": [
+        {"entry_frame_index": 246, "withdrawal_end_frame_index": 589, "frames": 63, "depth_of_needle_hold": 0.373, "score": 2},
+        {"entry_frame_index": 990, "withdrawal_end_frame_index": 1312, "frames": 24, "depth_of_needle_hold": 0.485, "score": 2},
+        {"entry_frame_index": 1638, "withdrawal_end_frame_index": 2110, "frames": 38, "depth_of_needle_hold": 0.161, "score": 3},
+        {"entry_frame_index": 2464, "withdrawal_end_frame_index": 3062, "frames": 32, "depth_of_needle_hold": 0.145, "score": 3}
       ]
     },
     {
       "video": "Suturing_B004",
       "stitches": [
-        {"entry_frame_index": 135, "withdrawal_end_frame_index": 764, "frames": 13, "depth_of_needle_hold": 0.263, "score": 2},
-        {"entry_frame_index": 1174, "withdrawal_end_frame_index": 1484, "frames": 4, "depth_of_needle_hold": 0.174, "score": 3},
-        {"entry_frame_index": 1840, "withdrawal_end_frame_index": 2254, "frames": 4, "depth_of_needle_hold": 0.164, "score": 3},
-        {"entry_frame_index": 2661, "withdrawal_end_frame_index": 2994, "frames": 3, "depth_of_needle_hold": 0.271, "score": 2}
+        {"entry_frame_index": 135, "withdrawal_end_frame_index": 764, "frames": 30, "depth_of_needle_hold": 0.261, "score": 2},
+        {"entry_frame_index": 1174, "withdrawal_end_frame_index": 1484, "frames": 49, "depth_of_needle_hold": 0.167, "score": 3},
+        {"entry_frame_index": 1840, "withdrawal_end_frame_index": 2254, "frames": 39, "depth_of_needle_hold": 0.159, "score": 3},
+        {"entry_frame_index": 2661, "withdrawal_end_frame_index": 2994, "frames": 42, "depth_of_needle_hold": 0.271, "score": 2}
+      ]
+    },
+    {
+      "video": "Suturing_B005",
+      "stitches": [
+        {"entry_frame_index": 518, "withdrawal_end_frame_index": 1031, "frames": 139, "depth_of_needle_hold": 0.107, "score": 3},
+        {"entry_frame_index": 1303, "withdrawal_end_frame_index": 1551, "frames": 34, "depth_of_needle_hold": 0.059, "score": 3},
+        {"entry_frame_index": 1855, "withdrawal_end_frame_index": 2172, "frames": 24, "depth_of_needle_hold": 0.219, "score": 3},
+        {"entry_frame_index": 2388, "withdrawal_end_frame_index": 2634, "frames": 20, "depth_of_needle_hold": 0.284, "score": 2}
       ]
     },
     {
       "video": "Suturing_E001",
       "stitches": [
-        {"entry_frame_index": 354, "withdrawal_end_frame_index": 807, "frames": 52, "depth_of_needle_hold": 0.16, "score": 3},
-        {"entry_frame_index": 1160, "withdrawal_end_frame_index": 1514, "frames": 4, "depth_of_needle_hold": 0.175, "score": 3},
-        {"entry_frame_index": 1854, "withdrawal_end_frame_index": 2249, "frames": 4, "depth_of_needle_hold": 0.165, "score": 3},
-        {"entry_frame_index": 2665, "withdrawal_end_frame_index": 2965, "frames": 0, "depth_of_needle_hold": null, "score": null}
+        {"entry_frame_index": 354, "withdrawal_end_frame_index": 807, "frames": 94, "depth_of_needle_hold": 0.18, "score": 3},
+        {"entry_frame_index": 1160, "withdrawal_end_frame_index": 1514, "frames": 24, "depth_of_needle_hold": 0.175, "score": 3},
+        {"entry_frame_index": 1854, "withdrawal_end_frame_index": 2249, "frames": 28, "depth_of_needle_hold": 0.17, "score": 3},
+        {"entry_frame_index": 2665, "withdrawal_end_frame_index": 2965, "frames": 31, "depth_of_needle_hold": 0.207, "score": 3}
       ]
     },
     {
       "video": "Suturing_E002",
       "stitches": [
-        {"entry_frame_index": 286, "withdrawal_end_frame_index": 702, "frames": 41, "depth_of_needle_hold": 0.149, "score": 3},
-        {"entry_frame_index": 1091, "withdrawal_end_frame_index": 1317, "frames": 8, "depth_of_needle_hold": 0.296, "score": 2},
-        {"entry_frame_index": 1612, "withdrawal_end_frame_index": 1826, "frames": 3, "depth_of_needle_hold": 0.348, "score": 2},
-        {"entry_frame_index": 2117, "withdrawal_end_frame_index": 2408, "frames": 1, "depth_of_needle_hold": 0.216, "score": 3}
+        {"entry_frame_index": 286, "withdrawal_end_frame_index": 702, "frames": 77, "depth_of_needle_hold": 0.206, "score": 3},
+        {"entry_frame_index": 1091, "withdrawal_end_frame_index": 1317, "frames": 35, "depth_of_needle_hold": 0.275, "score": 2},
+        {"entry_frame_index": 1612, "withdrawal_end_frame_index": 1826, "frames": 33, "depth_of_needle_hold": 0.348, "score": 2},
+        {"entry_frame_index": 2117, "withdrawal_end_frame_index": 2408, "frames": 27, "depth_of_needle_hold": 0.216, "score": 3}
+      ]
+    },
+    {
+      "video": "Suturing_E004",
+      "stitches": [
+        {"entry_frame_index": 278, "withdrawal_end_frame_index": 601, "frames": 79, "depth_of_needle_hold": 0.236, "score": 3},
+        {"entry_frame_index": 931, "withdrawal_end_frame_index": 1175, "frames": 42, "depth_of_needle_hold": 0.331, "score": 2},
+        {"entry_frame_index": 1520, "withdrawal_end_frame_index": 1745, "frames": 28, "depth_of_needle_hold": 0.178, "score": 3},
+        {"entry_frame_index": 2238, "withdrawal_end_frame_index": 2486, "frames": 33, "depth_of_needle_hold": 0.73, "score": 1}
+      ]
+    },
+    {
+      "video": "Suturing_E005",
+      "stitches": [
+        {"entry_frame_index": 157, "withdrawal_end_frame_index": 426, "frames": 53, "depth_of_needle_hold": 0.35, "score": 2},
+        {"entry_frame_index": 730, "withdrawal_end_frame_index": 941, "frames": 28, "depth_of_needle_hold": 0.203, "score": 3},
+        {"entry_frame_index": 1231, "withdrawal_end_frame_index": 1478, "frames": 20, "depth_of_needle_hold": 0.277, "score": 2},
+        {"entry_frame_index": 1714, "withdrawal_end_frame_index": 1922, "frames": 25, "depth_of_needle_hold": 0.282, "score": 2}
       ]
     },
     {
       "video": "Suturing_F001",
       "stitches": [
-        {"entry_frame_index": 308, "withdrawal_end_frame_index": 575, "frames": 1, "depth_of_needle_hold": 0.291, "score": 2},
-        {"entry_frame_index": 966, "withdrawal_end_frame_index": 1200, "frames": 1, "depth_of_needle_hold": 0.215, "score": 3},
-        {"entry_frame_index": 1507, "withdrawal_end_frame_index": 1755, "frames": 7, "depth_of_needle_hold": 0.39, "score": 2},
-        {"entry_frame_index": 2236, "withdrawal_end_frame_index": 2448, "frames": 14, "depth_of_needle_hold": 0.304, "score": 2}
+        {"entry_frame_index": 308, "withdrawal_end_frame_index": 575, "frames": 30, "depth_of_needle_hold": 0.291, "score": 2},
+        {"entry_frame_index": 966, "withdrawal_end_frame_index": 1200, "frames": 37, "depth_of_needle_hold": 0.215, "score": 3},
+        {"entry_frame_index": 1507, "withdrawal_end_frame_index": 1755, "frames": 46, "depth_of_needle_hold": 0.404, "score": 2},
+        {"entry_frame_index": 2236, "withdrawal_end_frame_index": 2448, "frames": 62, "depth_of_needle_hold": 0.307, "score": 2}
       ]
     },
     {
       "video": "Suturing_F003",
       "stitches": [
-        {"entry_frame_index": 241, "withdrawal_end_frame_index": 442, "frames": 0, "depth_of_needle_hold": null, "score": null},
-        {"entry_frame_index": 705, "withdrawal_end_frame_index": 902, "frames": 4, "depth_of_needle_hold": 0.321, "score": 2},
-        {"entry_frame_index": 1240, "withdrawal_end_frame_index": 1437, "frames": 16, "depth_of_needle_hold": 0.316, "score": 2},
-        {"entry_frame_index": 1685, "withdrawal_end_frame_index": 1873, "frames": 3, "depth_of_needle_hold": 0.172, "score": 3}
+        {"entry_frame_index": 241, "withdrawal_end_frame_index": 442, "frames": 24, "depth_of_needle_hold": 0.482, "score": 2},
+        {"entry_frame_index": 705, "withdrawal_end_frame_index": 902, "frames": 39, "depth_of_needle_hold": 0.31, "score": 2},
+        {"entry_frame_index": 1240, "withdrawal_end_frame_index": 1437, "frames": 41, "depth_of_needle_hold": 0.246, "score": 3},
+        {"entry_frame_index": 1685, "withdrawal_end_frame_index": 1873, "frames": 35, "depth_of_needle_hold": 0.172, "score": 3}
+      ]
+    },
+    {
+      "video": "Suturing_F004",
+      "stitches": [
+        {"entry_frame_index": 254, "withdrawal_end_frame_index": 448, "frames": 38, "depth_of_needle_hold": 0.36, "score": 2},
+        {"entry_frame_index": 701, "withdrawal_end_frame_index": 882, "frames": 36, "depth_of_needle_hold": 0.216, "score": 3},
+        {"entry_frame_index": 1400, "withdrawal_end_frame_index": 1630, "frames": 74, "depth_of_needle_hold": 0.301, "score": 2},
+        {"entry_frame_index": 1912, "withdrawal_end_frame_index": 2100, "frames": 42, "depth_of_needle_hold": 0.187, "score": 3}
+      ]
+    },
+    {
+      "video": "Suturing_F005",
+      "stitches": [
+        {"entry_frame_index": 270, "withdrawal_end_frame_index": 473, "frames": 21, "depth_of_needle_hold": 0.378, "score": 2},
+        {"entry_frame_index": 682, "withdrawal_end_frame_index": 832, "frames": 27, "depth_of_needle_hold": 0.197, "score": 3},
+        {"entry_frame_index": 1097, "withdrawal_end_frame_index": 1255, "frames": 27, "depth_of_needle_hold": 0.223, "score": 3},
+        {"entry_frame_index": 1526, "withdrawal_end_frame_index": 1704, "frames": 49, "depth_of_needle_hold": 0.378, "score": 2}
       ]
     },
     {
       "video": "Suturing_I001",
       "stitches": [
-        {"entry_frame_index": 510, "withdrawal_end_frame_index": 991, "frames": 34, "depth_of_needle_hold": 0.246, "score": 3},
-        {"entry_frame_index": 1368, "withdrawal_end_frame_index": 1728, "frames": 22, "depth_of_needle_hold": 0.399, "score": 2},
-        {"entry_frame_index": 2150, "withdrawal_end_frame_index": 2606, "frames": 12, "depth_of_needle_hold": 0.161, "score": 3},
-        {"entry_frame_index": 3554, "withdrawal_end_frame_index": 3949, "frames": 73, "depth_of_needle_hold": 0.56, "score": 1}
+        {"entry_frame_index": 510, "withdrawal_end_frame_index": 991, "frames": 51, "depth_of_needle_hold": 0.369, "score": 2},
+        {"entry_frame_index": 1368, "withdrawal_end_frame_index": 1728, "frames": 58, "depth_of_needle_hold": 0.397, "score": 2},
+        {"entry_frame_index": 2150, "withdrawal_end_frame_index": 2606, "frames": 44, "depth_of_needle_hold": 0.129, "score": 3},
+        {"entry_frame_index": 3554, "withdrawal_end_frame_index": 3949, "frames": 197, "depth_of_needle_hold": 0.496, "score": 2}
       ]
     },
     {
       "video": "Suturing_I002",
       "stitches": [
-        {"entry_frame_index": 700, "withdrawal_end_frame_index": 1294, "frames": 3, "depth_of_needle_hold": 0.075, "score": 3},
-        {"entry_frame_index": 2014, "withdrawal_end_frame_index": 2457, "frames": 58, "depth_of_needle_hold": 0.172, "score": 3},
-        {"entry_frame_index": 2960, "withdrawal_end_frame_index": 3383, "frames": 11, "depth_of_needle_hold": 0.244, "score": 3},
-        {"entry_frame_index": 3805, "withdrawal_end_frame_index": 4288, "frames": 10, "depth_of_needle_hold": 0.151, "score": 3}
+        {"entry_frame_index": 700, "withdrawal_end_frame_index": 1294, "frames": 64, "depth_of_needle_hold": 0.042, "score": 3},
+        {"entry_frame_index": 2014, "withdrawal_end_frame_index": 2457, "frames": 138, "depth_of_needle_hold": 0.128, "score": 3},
+        {"entry_frame_index": 2960, "withdrawal_end_frame_index": 3383, "frames": 68, "depth_of_needle_hold": 0.257, "score": 2},
+        {"entry_frame_index": 3805, "withdrawal_end_frame_index": 4288, "frames": 60, "depth_of_needle_hold": 0.133, "score": 3}
+      ]
+    },
+    {
+      "video": "Suturing_I003",
+      "stitches": [
+        {"entry_frame_index": 854, "withdrawal_end_frame_index": 1324, "frames": 66, "depth_of_needle_hold": 0.104, "score": 3},
+        {"entry_frame_index": 2022, "withdrawal_end_frame_index": 2379, "frames": 116, "depth_of_needle_hold": 0.192, "score": 3},
+        {"entry_frame_index": 2978, "withdrawal_end_frame_index": 3488, "frames": 68, "depth_of_needle_hold": 0.09, "score": 3},
+        {"entry_frame_index": 3803, "withdrawal_end_frame_index": 4103, "frames": 24, "depth_of_needle_hold": 0.194, "score": 3}
+      ]
+    },
+    {
+      "video": "Suturing_I004",
+      "stitches": [
+        {"entry_frame_index": 584, "withdrawal_end_frame_index": 929, "frames": 63, "depth_of_needle_hold": 0.183, "score": 3},
+        {"entry_frame_index": 1537, "withdrawal_end_frame_index": 1934, "frames": 75, "depth_of_needle_hold": 0.176, "score": 3},
+        {"entry_frame_index": 2547, "withdrawal_end_frame_index": 2958, "frames": 65, "depth_of_needle_hold": 0.204, "score": 3},
+        {"entry_frame_index": 3342, "withdrawal_end_frame_index": 3592, "frames": 25, "depth_of_needle_hold": 0.231, "score": 3}
       ]
     }
   ]
