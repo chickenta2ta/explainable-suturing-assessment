@@ -25,6 +25,26 @@ def image_url(image):
     return "data:image/jpeg;base64," + base64.b64encode(buffer.tobytes()).decode()
 
 
+def dumps_lines(result, key):
+    """JSON text of a result, one field per line and one item of result[key] per line"""
+    fields = []
+    for name, value in result.items():
+        if name == key and value:
+            items = (
+                [f"{json.dumps(k)}: {json.dumps(v)}" for k, v in value.items()]
+                if isinstance(value, dict)
+                else [json.dumps(v) for v in value]
+            )
+            brackets = "{}" if isinstance(value, dict) else "[]"
+            body = ",\n".join(f"    {item}" for item in items)
+            fields.append(
+                f"  {json.dumps(name)}: {brackets[0]}\n{body}\n  {brackets[1]}"
+            )
+        else:
+            fields.append(f"  {json.dumps(name)}: {json.dumps(value)}")
+    return "{\n" + ",\n".join(fields) + "\n}\n"
+
+
 def submit(video, output_dir):
     """Submit the requests as batches whose input files stay under MAX_BATCH_BYTES"""
     chunks = [[]]

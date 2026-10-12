@@ -4,7 +4,15 @@ from pathlib import Path
 
 import cv2
 import requests
-from astra import API_URL, MODEL, REASONING_EFFORT, headers, image_url, submit
+from astra import (
+    API_URL,
+    MODEL,
+    REASONING_EFFORT,
+    dumps_lines,
+    headers,
+    image_url,
+    submit,
+)
 from frames import FRAME_SIZE, count_frames, original_size, read_frames, video_path
 
 # Keypoint detection and needle segmentation run on frame_index % FRAME_STEP == 0
@@ -341,7 +349,7 @@ def fetch(video, output_dir):
         "failed_windows": failed,
         "frames": {str(i): result for i, (_, result) in sorted(results.items())},
     }
-    (output_dir / f"{video}.json").write_text(json.dumps(output))
+    (output_dir / f"{video}.json").write_text(dumps_lines(output, "frames"))
     print(f"{video}: {len(results)} frames, {len(failed)} failed windows")
 
 

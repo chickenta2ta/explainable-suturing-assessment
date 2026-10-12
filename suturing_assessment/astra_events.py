@@ -8,6 +8,7 @@ from astra import (
     API_URL,
     MODEL,
     REASONING_EFFORT,
+    dumps_lines,
     headers,
     image_url,
     submit,
@@ -294,7 +295,7 @@ def load_result(video_dir, video, output_dir):
 def build(video_dir, video, output_dir):
     """Write the batch request of the next window of a video; False when all windows are done"""
     result = load_result(video_dir, video, output_dir)
-    (output_dir / f"{video}.json").write_text(json.dumps(result))
+    (output_dir / f"{video}.json").write_text(dumps_lines(result, "events"))
     if result["done"] == len(result["windows"]):
         print(f"{video}: all {result['done']} windows done")
         return False
@@ -336,11 +337,11 @@ def record(video, output_dir, line):
     events = parse_events(line, window)
     if line["custom_id"] != f"{video}:{window[1]}" or events is None:
         result["failed_windows"].append(window[1])
-        path.write_text(json.dumps(result))
+        path.write_text(dumps_lines(result, "events"))
         return False
     result["events"] += events
     result["done"] += 1
-    path.write_text(json.dumps(result))
+    path.write_text(dumps_lines(result, "events"))
     return True
 
 
