@@ -4,9 +4,10 @@ from frames import FRAME_SIZE
 
 # Resolution of the search (docs/needle_hold.md)
 PLANE_ROTATIONS = 64
-ARC_POINTS = 32
-MASK_POINTS = 64
-RADII = 16 * 2 ** (np.arange(33) / 8)
+ARC_POINTS = 16
+MASK_POINTS = 32
+RADII = 16 * 2 ** (np.arange(17) / 4)
+STITCH_FRAMES = 16
 CENTRAL_ANGLES = np.radians(np.arange(10, 351, 10))
 COARSE_RATIOS = np.arange(1, 33) / 32
 FINE_RATIOS = np.arange(1, 129) / 128
@@ -127,9 +128,14 @@ def needle_hold_ratio(frames, windows):
     observed = []
     for start, entry, _ in windows:
         stitch_frames = [
-            ratio_frame(f) for i, f in frames.items() if start <= i <= entry
+            ratio_frame(f) for i, f in sorted(frames.items()) if start <= i <= entry
         ]
-        observed.append([f for f in stitch_frames if f is not None])
+        stitch_frames = [f for f in stitch_frames if f is not None]
+        # Evenly spaced frames of the window
+        if len(stitch_frames) > STITCH_FRAMES:
+            index = np.linspace(0, len(stitch_frames) - 1, STITCH_FRAMES)
+            stitch_frames = [stitch_frames[i] for i in index.astype(int)]
+        observed.append(stitch_frames)
     measured = [o for o in observed if o]
     if not measured:
         return [(None, 0)] * len(windows)

@@ -31,11 +31,12 @@ The needle is registered to each frame as a rigid circular arc.
     `clasper_1`, `clasper_2` and `head`, where the jaws hide the needle;
   - from the points of the needle mask to the projected arc;
   - from the projected tail to `needle_tail`, when it is visible.
-- Cost of a stitch: the mean cost of the frames of its window that have `needle_tip` and the needle mask (Frames).
+- Cost of a stitch: the mean cost of 16 evenly spaced frames (all if fewer) of its window that have `needle_tip`
+  and the needle mask (Frames).
 - Estimation: r and Θ of the video minimize the sum over the stitches of the least cost over s. Then s of each
   stitch minimizes its cost.
-- Search: 64 rotations of the needle plane, 32 points on the arc, 64 points of the needle mask, r from 16 to 256
-  pixels in steps of 1/8 octave, Θ from 10° to 350° in steps of 10°, and s in steps of 1/32 for r and Θ and 1/128
+- Search: 64 rotations of the needle plane, 16 points on the arc, 32 points of the needle mask, r from 16 to 256
+  pixels in steps of 1/4 octave, Θ from 10° to 350° in steps of 10°, and s in steps of 1/32 for r and Θ and 1/128
   for the final value.
 - Value of a stitch: s. The stitch is not measured if no frame has the observations.
 
