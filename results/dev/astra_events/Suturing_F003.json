@@ -1,0 +1,27 @@
+{
+  "video": "Suturing_F003",
+  "model": "gpt-6-astra",
+  "windows": [[0, 0, 600, 900], [300, 600, 1200, 1500], [900, 1200, 1800, 2100], [1500, 1800, 2279, 2279]],
+  "done": 4,
+  "failed_windows": [],
+  "events": [
+    {"event": "needle_reposition_start", "frame_index": 108},
+    {"event": "needle_reposition_end", "frame_index": 120},
+    {"event": "needle_reposition_start", "frame_index": 162},
+    {"event": "needle_reposition_end", "frame_index": 174},
+    {"event": "needle_entry", "frame_index": 246},
+    {"event": "needle_withdrawal_end", "frame_index": 444},
+    {"event": "needle_reposition_start", "frame_index": 564},
+    {"event": "needle_reposition_end", "frame_index": 594},
+    {"event": "needle_entry", "frame_index": 708},
+    {"event": "needle_withdrawal_end", "frame_index": 906},
+    {"event": "needle_reposition_start", "frame_index": 1062},
+    {"event": "needle_reposition_end", "frame_index": 1122},
+    {"event": "needle_entry", "frame_index": 1260},
+    {"event": "needle_withdrawal_end", "frame_index": 1440},
+    {"event": "needle_reposition_start", "frame_index": 1542},
+    {"event": "needle_reposition_end", "frame_index": 1572},
+    {"event": "needle_entry", "frame_index": 1704},
+    {"event": "needle_withdrawal_end", "frame_index": 1890}
+  ]
+}
