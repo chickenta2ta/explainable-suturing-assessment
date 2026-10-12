@@ -72,8 +72,8 @@ along them.
 
 ## Results
 
-`results/dev/needle_hold_ratio.json`, `results/dev/needle_hold_angle.json` and
-`results/dev/depth_of_needle_hold.json` hold the value and the EASE score of each stitch
+`results/{dev,test}/needle_hold_ratio.json`, `results/{dev,test}/needle_hold_angle.json` and
+`results/{dev,test}/depth_of_needle_hold.json` hold the value and the EASE score of each stitch
 (`suturing_assessment/needle_hold.py`, with the annotated events). The score of Needle Hold Ratio is good or poor.
 
 ```json
