@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+from needle_hold_ratio import needle_hold_ratio, only_holder, ratio_score
 
 # Percentile of the length in the image taken as the true length (docs/needle_hold.md)
 TRUE_LENGTH_PERCENTILE = 95
@@ -10,6 +11,11 @@ TRUE_LENGTH_PERCENTILE = 95
 DEPTH_MIN_JAW = 0.8
 
 SUB_SKILLS = {
+    "needle_hold_ratio": (
+        lambda f, w: needle_hold_ratio(f, w),
+        lambda v: ratio_score(v),
+        3,
+    ),
     "needle_hold_angle": (
         lambda f, w: needle_hold_angle(f, w),
         lambda v: angle_score(v),
@@ -45,10 +51,9 @@ def stitches(events):
 
 def holding_instrument(frame):
     """(grasp, head, jaw tip) of the only instrument with grasp, or None"""
-    holders = [i for i in frame["instruments"] if i["grasp"] is not None]
-    if len(holders) != 1 or holders[0]["head"] is None:
+    holder = only_holder(frame)
+    if holder is None or holder["head"] is None:
         return None
-    holder = holders[0]
     claspers = [holder[k] for k in ("clasper_1", "clasper_2") if holder[k] is not None]
     if not claspers:
         return None
@@ -171,7 +176,7 @@ def write_results(path, videos, name):
 
 
 def main():
-    """Needle Hold Angle and Depth of Needle Hold of the stitches of the given videos, from keypoints and annotated events"""
+    """Needle Hold sub-skills of the stitches of the given videos, from keypoints, needle masks and annotated events"""
     if len(sys.argv) < 5:
         print(
             "Usage: needle_hold.py KEYPOINT_DIR ANNOTATIONS OUTPUT_DIR VIDEO [VIDEO ...]"
