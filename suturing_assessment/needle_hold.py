@@ -183,7 +183,7 @@ def main():
     }
     results = {name: [] for name in SUB_SKILLS}
     for video in sys.argv[4:]:
-        result = json.loads((keypoint_dir / video / f"{video}.json").read_text())
+        result = json.loads((keypoint_dir / f"{video}.json").read_text())
         frames = {int(index): frame for index, frame in result["frames"].items()}
         windows = stitches(events[video])
         for name, (measure, score, digits) in SUB_SKILLS.items():
