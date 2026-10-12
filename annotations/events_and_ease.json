@@ -169,7 +169,7 @@
         {"entry_frame_index": 480, "withdrawal_end_frame_index": 832, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1353, "withdrawal_end_frame_index": 1538, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
         {"entry_frame_index": 1915, "withdrawal_end_frame_index": 2127, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 2}},
-        {"entry_frame_index": 2464, "withdrawal_end_frame_index": 2872, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}}
+        {"entry_frame_index": 2464, "withdrawal_end_frame_index": 2872, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}}
       ]
     },
     {
@@ -196,8 +196,8 @@
       ],
       "stitches": [
         {"entry_frame_index": 485, "withdrawal_end_frame_index": 750, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 1166, "withdrawal_end_frame_index": 1351, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
-        {"entry_frame_index": 1727, "withdrawal_end_frame_index": 1954, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1166, "withdrawal_end_frame_index": 1351, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
+        {"entry_frame_index": 1727, "withdrawal_end_frame_index": 1954, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 2303, "withdrawal_end_frame_index": 2546, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}}
       ]
     },
@@ -225,9 +225,9 @@
       ],
       "stitches": [
         {"entry_frame_index": 333, "withdrawal_end_frame_index": 498, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 3}},
-        {"entry_frame_index": 875, "withdrawal_end_frame_index": 1114, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 875, "withdrawal_end_frame_index": 1114, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
         {"entry_frame_index": 1445, "withdrawal_end_frame_index": 1627, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 3}},
-        {"entry_frame_index": 1903, "withdrawal_end_frame_index": 2090, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}}
+        {"entry_frame_index": 1903, "withdrawal_end_frame_index": 2090, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}}
       ]
     },
     {
@@ -260,9 +260,9 @@
       ],
       "stitches": [
         {"entry_frame_index": 302, "withdrawal_end_frame_index": 426, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 3}},
-        {"entry_frame_index": 722, "withdrawal_end_frame_index": 914, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 3}},
+        {"entry_frame_index": 722, "withdrawal_end_frame_index": 914, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
         {"entry_frame_index": 1379, "withdrawal_end_frame_index": 1520, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
-        {"entry_frame_index": 1936, "withdrawal_end_frame_index": 2212, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 1, "wrist_rotation": 2}}
+        {"entry_frame_index": 1936, "withdrawal_end_frame_index": 2212, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 1, "wrist_rotation": 2}}
       ]
     },
     {
@@ -289,8 +289,8 @@
       ],
       "stitches": [
         {"entry_frame_index": 417, "withdrawal_end_frame_index": 579, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
-        {"entry_frame_index": 1193, "withdrawal_end_frame_index": 1592, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 1}},
-        {"entry_frame_index": 1897, "withdrawal_end_frame_index": 2099, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 2, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1193, "withdrawal_end_frame_index": 1592, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 1}},
+        {"entry_frame_index": 1897, "withdrawal_end_frame_index": 2099, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 2332, "withdrawal_end_frame_index": 2615, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 2}}
       ]
     },
@@ -315,7 +315,7 @@
         {"frame_index": 1868, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 173, "withdrawal_end_frame_index": 402, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 2}},
+        {"entry_frame_index": 173, "withdrawal_end_frame_index": 402, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 1}},
         {"entry_frame_index": 738, "withdrawal_end_frame_index": 917, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 1187, "withdrawal_end_frame_index": 1343, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 1648, "withdrawal_end_frame_index": 1868, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 3}}
@@ -347,7 +347,7 @@
         {"entry_frame_index": 292, "withdrawal_end_frame_index": 458, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 1}},
         {"entry_frame_index": 810, "withdrawal_end_frame_index": 995, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1443, "withdrawal_end_frame_index": 1612, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
-        {"entry_frame_index": 1839, "withdrawal_end_frame_index": 2168, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
+        {"entry_frame_index": 1839, "withdrawal_end_frame_index": 2168, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
       ]
     },
     {
@@ -373,8 +373,8 @@
         {"frame_index": 2477, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 334, "withdrawal_end_frame_index": 514, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 790, "withdrawal_end_frame_index": 943, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 334, "withdrawal_end_frame_index": 514, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 790, "withdrawal_end_frame_index": 943, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1430, "withdrawal_end_frame_index": 1625, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 2279, "withdrawal_end_frame_index": 2477, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 3}}
       ]
@@ -403,8 +403,8 @@
       ],
       "stitches": [
         {"entry_frame_index": 299, "withdrawal_end_frame_index": 438, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 706, "withdrawal_end_frame_index": 850, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 1, "wrist_rotation": 2}},
-        {"entry_frame_index": 1128, "withdrawal_end_frame_index": 1277, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 3}},
+        {"entry_frame_index": 706, "withdrawal_end_frame_index": 850, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
+        {"entry_frame_index": 1128, "withdrawal_end_frame_index": 1277, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 2}},
         {"entry_frame_index": 1519, "withdrawal_end_frame_index": 1654, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}}
       ]
     },
@@ -681,7 +681,7 @@
         {"frame_index": 8765, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 495, "withdrawal_end_frame_index": 874, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 495, "withdrawal_end_frame_index": 874, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 3604, "withdrawal_end_frame_index": 4358, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 4922, "withdrawal_end_frame_index": 5969, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 8278, "withdrawal_end_frame_index": 8765, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 1, "wrist_rotation": 1}}
@@ -710,10 +710,10 @@
         {"frame_index": 3095, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 303, "withdrawal_end_frame_index": 628, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 303, "withdrawal_end_frame_index": 628, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 922, "withdrawal_end_frame_index": 1359, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 1690, "withdrawal_end_frame_index": 1950, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 2291, "withdrawal_end_frame_index": 3095, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
+        {"entry_frame_index": 2291, "withdrawal_end_frame_index": 3095, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
       ]
     },
     {
@@ -767,10 +767,10 @@
         {"frame_index": 4921, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 543, "withdrawal_end_frame_index": 868, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 1140, "withdrawal_end_frame_index": 1426, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 543, "withdrawal_end_frame_index": 868, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1140, "withdrawal_end_frame_index": 1426, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 2256, "withdrawal_end_frame_index": 2768, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 1}},
-        {"entry_frame_index": 4551, "withdrawal_end_frame_index": 4921, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
+        {"entry_frame_index": 4551, "withdrawal_end_frame_index": 4921, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 2, "wrist_rotation": 2}}
       ]
     },
     {
@@ -800,9 +800,9 @@
         {"frame_index": 2385, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 502, "withdrawal_end_frame_index": 754, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 1051, "withdrawal_end_frame_index": 1224, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 1527, "withdrawal_end_frame_index": 1790, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 502, "withdrawal_end_frame_index": 754, "ease_scores": {"needle_repositions": 1, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1051, "withdrawal_end_frame_index": 1224, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 1527, "withdrawal_end_frame_index": 1790, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 2102, "withdrawal_end_frame_index": 2385, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
       ]
     },
@@ -831,10 +831,10 @@
         {"frame_index": 2208, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 277, "withdrawal_end_frame_index": 523, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 802, "withdrawal_end_frame_index": 1001, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 277, "withdrawal_end_frame_index": 523, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
+        {"entry_frame_index": 802, "withdrawal_end_frame_index": 1001, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
         {"entry_frame_index": 1266, "withdrawal_end_frame_index": 1656, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 1944, "withdrawal_end_frame_index": 2208, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
+        {"entry_frame_index": 1944, "withdrawal_end_frame_index": 2208, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 1, "depth_of_needle_hold": 3, "wrist_rotation": 2}}
       ]
     },
     {
@@ -862,7 +862,7 @@
       "stitches": [
         {"entry_frame_index": 715, "withdrawal_end_frame_index": 1530, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 2021, "withdrawal_end_frame_index": 2445, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 3628, "withdrawal_end_frame_index": 4069, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 3628, "withdrawal_end_frame_index": 4069, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 4583, "withdrawal_end_frame_index": 5063, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}}
       ]
     },
@@ -893,8 +893,8 @@
       "stitches": [
         {"entry_frame_index": 563, "withdrawal_end_frame_index": 988, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 1484, "withdrawal_end_frame_index": 1763, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 2111, "withdrawal_end_frame_index": 2488, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 1, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 1}},
-        {"entry_frame_index": 2816, "withdrawal_end_frame_index": 3074, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 3}}
+        {"entry_frame_index": 2111, "withdrawal_end_frame_index": 2488, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 2816, "withdrawal_end_frame_index": 3074, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}}
       ]
     },
     {
@@ -927,8 +927,8 @@
       ],
       "stitches": [
         {"entry_frame_index": 483, "withdrawal_end_frame_index": 725, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 2}},
-        {"entry_frame_index": 1306, "withdrawal_end_frame_index": 1664, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
-        {"entry_frame_index": 2409, "withdrawal_end_frame_index": 2714, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 1306, "withdrawal_end_frame_index": 1664, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
+        {"entry_frame_index": 2409, "withdrawal_end_frame_index": 2714, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 3153, "withdrawal_end_frame_index": 3673, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
       ]
     },
@@ -957,7 +957,7 @@
         {"frame_index": 3061, "event": "needle_withdrawal_end"}
       ],
       "stitches": [
-        {"entry_frame_index": 425, "withdrawal_end_frame_index": 675, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 1}},
+        {"entry_frame_index": 425, "withdrawal_end_frame_index": 675, "ease_scores": {"needle_repositions": 2, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 1127, "withdrawal_end_frame_index": 1512, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 1950, "withdrawal_end_frame_index": 2376, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 2, "needle_hold_angle": 3, "depth_of_needle_hold": 3, "wrist_rotation": 1}},
         {"entry_frame_index": 2759, "withdrawal_end_frame_index": 3061, "ease_scores": {"needle_repositions": 3, "needle_hold_ratio": 3, "needle_hold_angle": 3, "depth_of_needle_hold": 2, "wrist_rotation": 1}}
