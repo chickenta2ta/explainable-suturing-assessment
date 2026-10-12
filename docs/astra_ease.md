@@ -1,7 +1,8 @@
 # Astra EASE Baseline
 
-As a baseline, Astra scores the Needle Hold sub-skills of EASE directly from the video frames, with few-shot
-examples. It is compared with the measurements of `docs/needle_hold.md` on the same observation windows.
+As a baseline, Astra scores the Needle Hold sub-skills of EASE and measures their quantities directly from the video
+frames, with few-shot examples. It is compared with the measurements of `docs/needle_hold.md` on the same observation
+windows.
 
 ## Requests
 
@@ -27,8 +28,11 @@ One request scores one stitch of the test videos. Stitches whose answer is not v
     the hold at the entry.
   - Score only the instrument holding the needle that enters the tissue, even if the other instrument touches the
     needle.
-  - Answer all three sub-skills. When the needle is hard to see, express the uncertainty in the probabilities
-    instead of declining.
+  - Besides the score, measure the quantity of each sub-skill in the notes: the position along the needle (0 to 1,
+    to 0.001), the angle in degrees (0 to 180, to 0.1°) and the depth in the jaws (0 at the jaw tip, 1 at the base of
+    the jaws, to 0.001).
+  - Answer all three sub-skills. When the needle is hard to see, give the most likely value and express the
+    uncertainty in the probabilities instead of declining.
 
 ## Examples
 
@@ -44,18 +48,21 @@ development stitch has Needle Hold Angle 2.
 
 - Frames: every frame with `frame_index % 6 == 0` from 1 s before the Needle Hold observation window to 1 s after
   the entry, as the examples of event detection show 1 s before and after the event.
-- Each example gives only the EASE scores, without reasons.
+- Each example gives only the EASE scores, without values or reasons.
 
 ## Output
 
 ```json
 {
-  "needle_hold_ratio": {"score": 1, "probabilities": {"1": 0.6, "2": 0.3, "3": 0.1}, "reason": "..."},
-  "needle_hold_angle": {"score": 3, "probabilities": {"1": 0.1, "2": 0.2, "3": 0.7}, "reason": "..."},
-  "depth_of_needle_hold": {"score": 2, "probabilities": {"1": 0.2, "2": 0.5, "3": 0.3}, "reason": "..."}
+  "needle_hold_ratio": {"value": 0.853, "score": 1, "probabilities": {"1": 0.6, "2": 0.3, "3": 0.1}, "reason": "..."},
+  "needle_hold_angle": {"value": 121.5, "score": 3, "probabilities": {"1": 0.1, "2": 0.2, "3": 0.7}, "reason": "..."},
+  "depth_of_needle_hold": {"value": 0.304, "score": 2, "probabilities": {"1": 0.2, "2": 0.5, "3": 0.3}, "reason": "..."}
 }
 ```
 
+- `value`: the measured quantity: the position along the needle (0 to 1, to 0.001), the angle in degrees (0 to 180,
+  to 0.1°) or the depth in the jaws (0 at the jaw tip, 1 at the base of the jaws, to 0.001). It is answered
+  separately from the score.
 - `score`: 1, 2 or 3.
 - `probabilities`: the probabilities of the three scores, summing to 1.
 - `reason`: one or two sentences.

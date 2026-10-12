@@ -78,8 +78,11 @@ Each sub-skill is scored 3 (ideal), 2 (adequate) or 1 (fail) by the following cr
   the hold at the entry.
 - Score only the instrument holding the needle that enters the tissue, even if the other instrument touches the
   needle.
-- Answer all three sub-skills. When the needle is hard to see, express the uncertainty in the probabilities instead
-  of declining.
+- Besides the score, measure the quantity of each sub-skill in the notes: the position along the needle (0 to 1, to
+  0.001), the angle in degrees (0 to 180, to 0.1°) and the depth in the jaws (0 at the jaw tip, 1 at the base of the
+  jaws, to 0.001).
+- Answer all three sub-skills. When the needle is hard to see, give the most likely value and express the
+  uncertainty in the probabilities instead of declining.
 
 # Input
 - Consecutive frames of one video, 0.2 s apart, in time order, each preceded by its frame index.
@@ -88,8 +91,8 @@ Each sub-skill is scored 3 (ideal), 2 (adequate) or 1 (fail) by the following cr
   tissue. The frames before and after are context, to tell what happens before and after, and are not scored.
 
 # Output
-For each sub-skill, the score, the probabilities of the three scores (summing to 1) and the reason in one or two
-sentences.
+For each sub-skill, the measured value, the score, the probabilities of the three scores (summing to 1) and the
+reason in one or two sentences.
 
 # Examples
 Stitches from other videos, each shown from up to 1 s before its target frames (none when they start at the start of
@@ -101,8 +104,9 @@ Score the hold of the needle from frame {first} to frame {last} (the needle entr
 SUB_SKILL_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["score", "probabilities", "reason"],
+    "required": ["value", "score", "probabilities", "reason"],
     "properties": {
+        "value": {"type": "number"},
         "score": {"type": "integer", "enum": [1, 2, 3]},
         "probabilities": {
             "type": "object",
@@ -290,6 +294,7 @@ def parse_scores(line):
         answer = json.loads(text)
         return {
             k: {
+                "value": float(answer[k]["value"]),
                 "score": int(answer[k]["score"]),
                 "probabilities": {
                     s: float(answer[k]["probabilities"][s]) for s in SCORES
