@@ -7,8 +7,6 @@ from needle_hold_ratio import needle_hold_ratio, only_holder, ratio_score
 
 # Percentile of the length in the image taken as the true length (docs/needle_hold.md)
 TRUE_LENGTH_PERCENTILE = 95
-# Depth of Needle Hold uses frames in which the jaws look at least this fraction of their true length
-DEPTH_MIN_JAW = 0.8
 
 SUB_SKILLS = {
     "needle_hold_ratio": (
@@ -118,11 +116,10 @@ def needle_hold_angle(frames, windows):
 
 
 def depth_of_needle_hold(frames, windows):
-    """Depth of Needle Hold of each stitch: (median depth or None, number of frames)"""
-    jaw_true = jaw_length(frames, windows)
+    """Depth of Needle Hold of each stitch: (depth in the frame with the longest jaws or None, number of frames)"""
     out = []
     for start, entry, _ in windows:
-        depths = []
+        rows = []
         for index, frame in frames.items():
             if not start <= index <= entry:
                 continue
@@ -131,11 +128,10 @@ def depth_of_needle_hold(frames, windows):
                 continue
             grasp, head, jaw_tip = holder
             jaw = head - jaw_tip
-            # Frames in which the jaws are not strongly foreshortened
-            if np.linalg.norm(jaw) < DEPTH_MIN_JAW * jaw_true:
-                continue
-            depths.append(float((grasp - jaw_tip) @ jaw / (jaw @ jaw)))
-        out.append((float(np.median(depths)), len(depths)) if depths else (None, 0))
+            if jaw @ jaw > 0:
+                rows.append((jaw @ jaw, float((grasp - jaw_tip) @ jaw / (jaw @ jaw))))
+        # The frame in which the jaws are least foreshortened
+        out.append((max(rows)[1], len(rows)) if rows else (None, 0))
     return out
 
 

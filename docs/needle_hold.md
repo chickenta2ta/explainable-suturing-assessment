@@ -8,12 +8,6 @@ Needle Hold observation window of each stitch (`docs/events.md`).
 A frame is used when exactly one instrument has `grasp`. That instrument is the one holding the needle.
 The jaw tip is the midpoint of `clasper_1` and `clasper_2` of the holding instrument, or the visible one of them.
 
-The true length of the jaws is the 95th percentile of the distance from the jaw tip to `head` in the image, over the
-frames of the Needle Hold observation windows of all stitches of the video. The length is fixed by the
-instrument, and foreshortening only shortens it, so a high percentile gives the true length while ignoring a few
-erroneous keypoints. The windows are used because the instrument then works at the pad, at a similar distance from
-the camera.
-
 ## Needle Hold Ratio
 
 The grasp ratio s is the length along the needle from `needle_tip` to the grasp point divided by the length of the
@@ -53,8 +47,11 @@ along them.
 
 - Keypoints: `grasp`, `needle_tip`, `head` and the jaw tip of the holding instrument.
 - Vectors in the image: the needle from `grasp` to `needle_tip`, and the jaws from the jaw tip to `head`.
-- True lengths: the true length of the jaws (Frames) and, for the needle, the 95th percentile of its length in the
-  image over the frames of the stitch (the grasp position does not change in the window).
+- True lengths: the 95th percentile of the length in the image. Foreshortening only shortens a vector, so a high
+  percentile gives the true length while ignoring a few erroneous keypoints. For the jaws, the percentile is over
+  the frames of the Needle Hold observation windows of all stitches of the video, where the instrument works at the
+  pad at a similar distance from the camera. For the needle, it is over the frames of the stitch, since the grasp
+  position does not change in the window.
 - Depth: with weak perspective, the depth component of each vector is the square root of the true length squared
   minus the length in the image squared (0 if negative). The camera looks down on the pad, so the needle tip is
   farther from the camera than `grasp`, and `head` is nearer than the jaw tip.
@@ -67,9 +64,10 @@ along them.
 - Keypoints: `grasp`, `head` and the jaw tip of the holding instrument.
 - Depth: the distance from the jaw tip to the projection of `grasp` onto the line through the jaw tip and `head`,
   divided by the distance from the jaw tip to `head` (0 at the jaw tip, 1 at `head`).
-- Frames: the frames of the stitch in which the jaws look at least 0.8 times their true length (Frames), where
-  the jaws are not strongly foreshortened.
-- Value of a stitch: the median depth of these frames. The stitch is not measured if there is no such frame.
+- With weak perspective, the ratio along the jaws is the same in the image as in 3D, but the keypoints are less
+  accurate when the jaws are foreshortened.
+- Value of a stitch: the depth in the frame of the stitch with the longest jaws in the image, where the jaws are
+  least foreshortened. The stitch is not measured if no frame has the keypoints.
 
 ## Results
 
