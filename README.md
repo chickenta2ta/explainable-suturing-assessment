@@ -6,3 +6,4 @@ Automated, explainable scoring of suturing sub-skills based on EASE (End-to-End 
 - [Events](docs/events.md)
 - [Keypoints](docs/keypoints.md)
 - [Needle Hold](docs/needle_hold.md)
+- [Astra EASE Baseline](docs/astra_ease.md)
