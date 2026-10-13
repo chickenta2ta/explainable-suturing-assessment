@@ -66,3 +66,8 @@ development stitch has Needle Hold Angle 2.
 - `score`: 1, 2 or 3.
 - `probabilities`: the probabilities of the three scores, summing to 1.
 - `reason`: one or two sentences.
+
+## Scores
+
+`results/test/astra_ease/{video}.json` hold the scores given by Astra (`suturing_assessment/astra_ease.py`), one entry
+per stitch with its entry frame (`entry_frame_index`).
